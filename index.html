@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Naira Expense Tracker</title>
+  <link rel="stylesheet" href="stlye.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Expense Tracker</h1>
+    <button class="theme" id="theme" type="button" aria-label="Toggle dark mode">Dark mode</button>
+  </header>
+
+  <form id="form" class="card" novalidate>
+    <div class="row">
+      <div>
+        <label for="title">Title</label>
+        <input id="title" maxlength="40" placeholder="e.g. Lunch" autocomplete="off">
+      </div>
+      <div>
+        <label for="amount">Amount (₦)</label>
+        <input id="amount" type="number" inputmode="decimal" step="any" placeholder="1500">
+      </div>
+      <div>
+        <label for="category">Category</label>
+        <select id="category">
+          <option>Food</option>
+          <option>Transport</option>
+          <option>Data</option>
+          <option>School</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <button class="add" type="submit">Add expense</button>
+    <p class="error" id="error" role="alert"></p>
+  </form>
+
+  <div class="total"><span>Total</span><strong id="total">₦0.00</strong></div>
+  <div class="warn" id="warn" hidden></div>
+  <ul class="chips" id="cats" aria-label="Total per category"></ul>
+
+  <section class="card">
+    <label for="filter">Filter by category</label>
+    <select id="filter">
+      <option value="All">All</option>
+      <option>Food</option>
+      <option>Transport</option>
+      <option>Data</option>
+      <option>School</option>
+      <option>Other</option>
+    </select>
+    <ul id="list"></ul>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
